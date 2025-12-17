@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CrashAnalytics Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"font"', 'sans-serif'],
+              display: ['Orbitron', 'sans-serif'],
+              arabic: ['font', 'sans-serif'],
+              mono: ['"font"', 'sans-serif'],
+            },
+            animation: {
+              glitch: 'glitch 1s linear infinite',
+              scan: 'scan 2s linear infinite',
+              'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+            },
+            keyframes: {
+              glitch: {
+                '2%, 64%': { transform: 'translate(2px,0) skew(0deg)' },
+                '4%, 60%': { transform: 'translate(-2px,0) skew(0deg)' },
+                '62%': { transform: 'translate(0,0) skew(5deg)' },
+              },
+              scan: {
+                '0%': { transform: 'translateY(-100%)' },
+                '100%': { transform: 'translateY(100%)' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* ===== Local Fonts ===== */
+
+      /* كل الخطوط من fonta/font.ttf */
+      @font-face {
+        font-family: 'font';
+        src: url('fonta/font.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'font';
+        src: url('fonta/font.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'font';
+        src: url('fonta/font.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'font';
+        src: url('fonta/font.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      /* Orbitron فقط كما هو */
+      @font-face {
+        font-family: 'font';
+        src: url('fonta/font.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'Orbitron';
+        src: url('fonta/font.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      body {
+        font-family: 'fonta/font.ttf', sans-serif;
+        background-color: #000000;
+        color: #e4e4e7;
+      }
+
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+      * {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      .glass-panel {
+        background: rgba(10, 10, 10, 0.8);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+      }
+
+      .font-display {
+        font-family: 'Orbitron', sans-serif;
+      }
+    </style>
+
+    <link rel="stylesheet" href="/index.css" />
+
+    <script type="importmap">
+      {
+        "imports": {
+          "react/": "https://esm.sh/react@^19.2.3/",
+          "react": "https://esm.sh/react@^19.2.3",
+          "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+          "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+          "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
+        }
+      }
+    </script>
+
+    <script type="module" crossorigin src="main.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
